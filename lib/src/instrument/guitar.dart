@@ -24,38 +24,48 @@ class Guitar extends Instrument {
     String key, [
     bool useFlat = false,
   ]) {
-    if (!sharpToFlat.containsKey(key)) key = sharpToFlat[key]!;
+    try {
+      if (!sharpToFlat.containsKey(key)) key = flatToSharp[key]!;
 
-    return guitarDataSet[key]!.map(
-      (e) {
-        if (!useFlat) return e;
+      return guitarDataSet[key]!.map(
+        (e) {
+          if (!useFlat) return e;
 
-        var key = sharpToFlat[e.chordKey]!;
+          var key = sharpToFlat[e.chordKey]!;
 
-        return Chord(
-          name: '$key${e.suffix}',
-          chordKey: key,
-          suffix: e.suffix,
-          chordPositions: e.chordPositions,
-        );
-      },
-    ).toList();
+          return Chord(
+            name: '$key${e.suffix}',
+            chordKey: key,
+            suffix: e.suffix,
+            chordPositions: e.chordPositions,
+          );
+        },
+      ).toList();
+    } catch (e) {
+      return null;
+    }
   }
 
   /// The [getChordPositions] function return all the style of chord positions base on major key and suffix
   @override
   List<ChordPosition>? getChordPositions(String key, String suffix) {
-    if (!sharpToFlat.containsKey(key)) key = sharpToFlat[key]!;
+    try {
+      if (!sharpToFlat.containsKey(key)) key = sharpToFlat[key]!;
 
-    var k = guitarDataSet[key];
-    if (k == null) return null;
+      var k = guitarDataSet[key];
+      if (k == null) return null;
 
-    if (suffix.trim().isEmpty) {
-      suffix = 'major';
-    } else if (suffix.trim() == 'm') {
-      suffix = 'minor';
+      if (suffix.trim().isEmpty) {
+        suffix = 'major';
+      } else if (suffix.trim() == 'm') {
+        suffix = 'minor';
+      }
+
+      return k
+          .firstWhere((element) => (element.suffix == suffix))
+          .chordPositions;
+    } catch (e) {
+      return null;
     }
-
-    return k.firstWhere((element) => (element.suffix == suffix)).chordPositions;
   }
 }
