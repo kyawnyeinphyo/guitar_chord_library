@@ -24,7 +24,7 @@ class Guitar extends Instrument {
     String key, [
     bool useFlat = false,
   ]) {
-    if (!guitarDataSet.containsKey(key)) return null;
+    if (!sharpToFlat.containsKey(key)) key = sharpToFlat[key]!;
 
     return guitarDataSet[key]!.map(
       (e) {

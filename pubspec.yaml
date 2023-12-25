@@ -1,6 +1,6 @@
 name: guitar_chord_library
 description: A perfect simple chord library for guitar and ukulele. Both flat and sharp note usage are supported.
-version: 0.0.2
+version: 0.0.3
 homepage: https://github.com/ygnCybernoob/guitar_chord_library
 
 environment:

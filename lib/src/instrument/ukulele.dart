@@ -24,6 +24,8 @@ class Ukulele extends Instrument {
     String key, [
     bool useFlat = false,
   ]) {
+    if (!sharpToFlat.containsKey(key)) key = sharpToFlat[key]!;
+
     return ukuleleDataSet[key]!.map(
       (e) {
         if (!useFlat) return e;
