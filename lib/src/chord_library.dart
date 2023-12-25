@@ -1,27 +1,23 @@
 import 'chord.dart';
+import 'dataset/guitar_dataset.dart';
 import 'dataset/ukulele_dataset.dart';
 
-class ChordLibrary {
+class GuitarChordLibrary {
   static Instrument? _instrument;
 
   static Instrument instrument([InstrumentType type = InstrumentType.guitar]) {
-    // switch (type) {
-    //   case InstrumentType.guitar:
-    //     if (_instrument != null && _instrument is _Guitar) {
-    //       return _instrument!;
-    //     }
-    //     return _instrument = _Guitar();
-    //   case InstrumentType.ukulele:
-    //     if (_instrument != null && _instrument is _Ukulele) {
-    //       return _instrument!;
-    //     }
-    //     return _instrument = _Ukulele();
-    // }
-
-    if (_instrument != null && _instrument is _Ukulele) {
-      return _instrument!;
+    switch (type) {
+      case InstrumentType.guitar:
+        if (_instrument != null && _instrument is _Guitar) {
+          return _instrument!;
+        }
+        return _instrument = _Guitar();
+      case InstrumentType.ukulele:
+        if (_instrument != null && _instrument is _Ukulele) {
+          return _instrument!;
+        }
+        return _instrument = _Ukulele();
     }
-    return _instrument = _Ukulele();
   }
 }
 
@@ -58,20 +54,24 @@ class _Ukulele extends Instrument {
   }
 }
 
-// class _Guitar extends Instrument {
-//   @override
-//   List<String> getKeys([bool useFlat = false]) {
-//     return guitarDataSet.keys.toList();
-//   }
+class _Guitar extends Instrument {
+  @override
+  List<String> getKeys([bool useFlat = false]) {
+    return guitarDataSet.keys.toList();
+  }
 
-//   @override
-//   List<Chord>? getChordsByKey(String key, [bool useFlat = false]) {
-//     return guitarDataSet[key];
-//   }
+  @override
+  List<Chord>? getChordsByKey(String key, [bool useFlat = false]) {
+    return guitarDataSet[key];
+  }
 
-//   @override
-//   List<ChordPosition>? getChordPositions(String chord, [bool useFlat = false]) {
-//     // TODO: implement getChordPositions
-//     throw UnimplementedError();
-//   }
-// }
+  @override
+  List<ChordPosition>? getChordPositions(String key, String suffix,
+      [bool useFlat = false]) {
+    // var format = formatChord(chord);
+    var k = guitarDataSet[key];
+    if (k == null) return null;
+
+    return k.firstWhere((element) => (element.suffix == suffix)).chordPositions;
+  }
+}

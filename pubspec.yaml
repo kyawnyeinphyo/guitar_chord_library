@@ -1,7 +1,7 @@
 name: guitar_chord_library
-description: A new Flutter package project.
+description: Guitar chord libary Guitar & Ukulele Chord Library 
 version: 0.0.1
-homepage: 
+homepage: https://github.com/ygnCybernoob/guitar_chord_library
 
 environment:
   sdk: '>=3.1.3 <4.0.0'

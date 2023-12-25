@@ -1,7 +1,7 @@
 import 'package:guitar_chord_library/guitar_chord_library.dart';
 
 void main() {
-  var instrument = ChordLibrary.instrument(InstrumentType.ukulele);
+  var instrument = GuitarChordLibrary.instrument(InstrumentType.ukulele);
 
   List<ChordPosition> chordPostions =
       instrument.getChordPositions('C', 'major')!;
