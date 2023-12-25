@@ -10,6 +10,11 @@ class Chord {
     required this.suffix,
     required this.chordPositions,
   });
+
+  @override
+  String toString() {
+    return '[$name, ${chordPositions.length}]';
+  }
 }
 
 class ChordPosition {
@@ -22,4 +27,9 @@ class ChordPosition {
     required this.fingers,
     required this.baseFret,
   });
+
+  @override
+  String toString() {
+    return 'baseFret:\t$baseFret\nfrets:\t$frets\nfingers:\t$fingers';
+  }
 }
