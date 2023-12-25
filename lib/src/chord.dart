@@ -1,9 +1,18 @@
+/// Store the chord information
 class Chord {
+  /// [name] is chord name
   final String name;
+
+  /// [chordKey] is major key of chord
   final String chordKey;
+
+  /// [suffix] is suffix of the chord
   final String suffix;
+
+  /// [chordPositions] is the positions of different style of chord
   final List<ChordPosition> chordPositions;
 
+  /// Every paramenter are needed to pass
   Chord({
     required this.name,
     required this.chordKey,
@@ -17,11 +26,25 @@ class Chord {
   }
 }
 
+/// Store the postion of chord tab
 class ChordPosition {
+  /// show the fret number and string
+  /// for the Cmajor key
+  /// -1 3 2 0 1 0
   final String frets;
+
+  /// show the finger number and fret
+  /// for the Cmajor key
+  ///  0 3 2 0 1 0
   final String fingers;
+
+  /// show the base fret number
+  /// start from 1
+  /// for the Cmajor key
+  /// 1
   final int baseFret;
 
+  /// Every paramenter are needed to pass
   ChordPosition({
     required this.frets,
     required this.fingers,

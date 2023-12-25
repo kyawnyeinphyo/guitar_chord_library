@@ -1,5 +1,6 @@
 import '../chord.dart';
 
+/// This is the whole dataset for guitar
 final Map<String, List<Chord>> guitarDataSet = {
   'C': [
     Chord(

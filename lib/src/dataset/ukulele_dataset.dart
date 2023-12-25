@@ -1,7 +1,6 @@
-
-
 import '../chord.dart';
 
+/// This is the whole dataset for ukulele
 final Map<String, List<Chord>> ukuleleDataSet = {
   'A': [
     Chord(
