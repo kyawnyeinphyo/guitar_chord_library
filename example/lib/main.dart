@@ -4,7 +4,7 @@ void main() {
   /// your favour instrument
   /// InstrumentType.guitar
   /// InstrumentType.ukulele
-  var instrument = GuitarChordLibrary.instrument(InstrumentType.guitar);
+  Instrument instrument = GuitarChordLibrary.instrument(InstrumentType.guitar);
 
   /// instrument string count
   print(instrument.stringCount);
