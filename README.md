@@ -1,43 +1,43 @@
 # Guitar Chord Library
 
-A perfect simple chord library for guitar and ukulele. Both flat and sharp note usage are supported.
+A perfect, simple chord library for guitar and ukulele. Both flat and sharp note usage are supported.
 **Pull request are always welcome :)**
 
 ## Features
 
-Support Instruments
+Supported instruments:
 
 - Guitar
 - Ukulele
 
 ```dart
-/// default is guitar
+/// Default is guitar
 GuitarChordLibrary.instrument(InstrumentType.ukulele)
 ```
 
 ## Usage
 
-To use this plugin, add guitar_chord_library as a dependency in your [pubspec.yaml](https://flutter.io/using-packages/) file.
+To use this plugin, add ``guitar_chord_library`` as a dependency in your [pubspec.yaml](https://flutter.io/using-packages/) file.
 
 ```dart
 void main() {
-  /// your favour instrument
+  /// Your favourite instrument:
   /// InstrumentType.guitar
   /// InstrumentType.ukulele
-  var instrument = GuitarChordLibrary.instrument(InstrumentType.guitar);
+  Instrument instrument = GuitarChordLibrary.instrument(InstrumentType.guitar);
 
-  /// instrument string count
+  /// Instrument string count
   print(instrument.stringCount);
 
-  /// all marjor keys
+  /// All major keys
   print(instrument.getKeys()); //use sharp
   print(instrument.getKeys(true)); //use flat
 
-  /// all chords by major key
+  /// All chords by major key
   print(instrument.getChordsByKey('C#')); //use sharp
   print(instrument.getChordsByKey('C#', true)); //use flat
 
-  /// all positions of Cmajor chord
+  /// All positions of Cmajor chord
   final chordPostions = instrument.getChordPositions('C', 'major')!;
 
   for (var position in chordPostions) {

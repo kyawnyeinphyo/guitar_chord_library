@@ -1,6 +1,5 @@
 import '../../guitar_chord_library.dart';
 import '../dataset/guitar_dataset.dart';
-import 'instrument.dart';
 
 /// Instrument implentation as Guitar
 class Guitar extends Instrument {
