@@ -1,6 +1,6 @@
 import '../../guitar_chord_library.dart';
 
-/// This is the abstract defintion of instrument
+/// This is the abstract definition of instrument
 /// If you are going to add new instrument
 /// you must extend this [Instrument] class
 abstract class Instrument {

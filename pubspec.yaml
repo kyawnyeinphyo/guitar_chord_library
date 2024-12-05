@@ -1,6 +1,6 @@
 name: guitar_chord_library
 description: A perfect simple chord library for guitar and ukulele. Both flat and sharp note usage are supported.
-version: 0.0.4
+version: 0.0.5
 homepage: https://github.com/ygnCybernoob/guitar_chord_library
 
 environment:
@@ -15,5 +15,3 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
-
-flutter:

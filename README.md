@@ -38,9 +38,9 @@ void main() {
   print(instrument.getChordsByKey('C#', true)); //use flat
 
   /// All positions of Cmajor chord
-  final chordPostions = instrument.getChordPositions('C', 'major')!;
+  final chordpositions = instrument.getChordPositions('C', 'major')!;
 
-  for (var position in chordPostions) {
+  for (var position in chordpositions) {
     print(
         'baseFret: ${position.baseFret}\nfrets: ${position.frets}\nfingers: ${position.fingers}\n');
   }

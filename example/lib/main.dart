@@ -1,7 +1,9 @@
+// ignore_for_file: avoid_print
+
 import 'package:guitar_chord_library/guitar_chord_library.dart';
 
 void main() {
-  /// your favour instrument
+  /// your preferred instrument
   /// InstrumentType.guitar
   /// InstrumentType.ukulele
   Instrument instrument = GuitarChordLibrary.instrument(InstrumentType.guitar);
@@ -9,7 +11,7 @@ void main() {
   /// instrument string count
   print(instrument.stringCount);
 
-  /// all marjor keys
+  /// all major keys
   print(instrument.getKeys()); //use sharp
   print(instrument.getKeys(true)); //use flat
 
@@ -18,9 +20,9 @@ void main() {
   print(instrument.getChordsByKey('C#', true)); //use flat
 
   /// all positions of Cmajor chord
-  final chordPostions = instrument.getChordPositions('C', 'major')!;
+  final chordPositions = instrument.getChordPositions('C', 'major')!;
 
-  for (var position in chordPostions) {
+  for (var position in chordPositions) {
     print(
         'baseFret: ${position.baseFret}\nfrets: ${position.frets}\nfingers: ${position.fingers}\n');
   }
