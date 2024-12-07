@@ -12,7 +12,7 @@ class Chord {
   /// [chordPositions] is the positions of different style of chord
   final List<ChordPosition> chordPositions;
 
-  /// Every paramenter are needed to pass
+  /// Every parameter are needed to pass
   Chord({
     required this.name,
     required this.chordKey,
@@ -26,7 +26,7 @@ class Chord {
   }
 }
 
-/// Store the postion of chord tab
+/// Store the position of chord tab
 class ChordPosition {
   /// show the fret number and string
   /// for the Cmajor key
@@ -44,7 +44,7 @@ class ChordPosition {
   /// 1
   final int baseFret;
 
-  /// Every paramenter are needed to pass
+  /// Every parameter are needed to pass
   ChordPosition({
     required this.frets,
     required this.fingers,

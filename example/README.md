@@ -1,6 +1,6 @@
 # example
 
-A new Flutter project.
+Sample code to demonstrate how to use [guitar_chord_library].
 
 ## Getting Started
 
